@@ -19,7 +19,7 @@ end
 electric_field = real(electric_field);
 electric_field = transpose(electric_field);
 figure;
-surf(x_axis,y_axis,E_real);
+surf(x_axis,y_axis,real(electric_field));
 colorbar;
 view(0,90);
 shading interp;
