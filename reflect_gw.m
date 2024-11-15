@@ -30,7 +30,7 @@ for wavenumber_xi = wavenumber_x
     wavenumber_xnew = wavenumber_xi*cos(theta)+wavenumber_zi*sin(theta);
     EI = E0_wavenumber(index)*exp(1i * (wavenumber_xnew.*(x_grid+3)+wavenumber_znew.*(z_grid+3))).*(z_grid<=0)*0.1257;
     ER = E0_wavenumber(index)*exp(1i * (wavenumber_xnew.*(x_grid+3)-wavenumber_znew.*(z_grid-3))).*(z_grid<=0)*0.1257;
-    ET = E0_wavenumber(index)*exp(1i * (wavenumber_xnew.*(x_grid+3)+sqrt(wave_number^2-wavenumber_xnew^2).*z_grid+wavenumber_znew*3)).*(z_grid>0)*0.1257;
+    ET = E0_wavenumber(index)*exp(1i * (wavenumber_xnew.*(x_grid+3)+sqrt(wave_number^2-wavenumber_xnew^2).*z_grid+wavenumber_znew*3)).*(z_grid>0)*0.1257;%wavenumber' seems to need to be changed
     E_L = E_L + EI + ER;
     E_R = E_R + ET;
 end
